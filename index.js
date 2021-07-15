@@ -28,7 +28,7 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+//invoking the function not tested
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -47,7 +47,9 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  //creating a method called discount -takes a param of customer and it give a discount based on the argunment passed in 
+  //if student or teacher discount should be 25% off the price -hint you need to refence this.price
+  //public 10% discount
 }
 
 
@@ -69,8 +71,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-
-
+//no tested
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
@@ -79,7 +80,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 */
 reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
 console.log(reviews);
-
+//niot being tested - assign an value inside of the object
 
 
 
@@ -92,7 +93,13 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
+function addReview(array, name, rating, feedback){
+  array.push({name, rating, feedback});
+  return array;
+  //create an object
+  //const object = {name, rating, review};
+  //push the object to the array
+  
   /*Your Code Here */
 }
 
@@ -106,8 +113,10 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
+//2 params = array, number
 
 function getReviewByIndex(/*Your code here*/) {
+  //return the array [number].feedback;
   /*Your code here*/
 }
 
@@ -125,9 +134,11 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+//array as a param
+function getLastReview(array) {
+  return `"${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}"`
+  /*Your code here*/ 
+  //array[].length
 } 
 
 
