@@ -15,9 +15,10 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    return {name, price, category}
 }
+console.log(createMenuItem('tacos', 8, 'lunch'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,7 +29,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-//invoking the function not tested
+// const newItemPizza = createMenuItem('pizza', 5, 'lunch');
+// const newItemWings = createMenuItem('wings', 10, 'lunch');
+// const newItemPasta = createMenuItem('pasta', 7, 'dinner');
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -47,12 +50,15 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  //creating a method called discount -takes a param of customer and it give a discount based on the argunment passed in 
-  //if student or teacher discount should be 25% off the price -hint you need to refence this.price
-  //public 10% discount
+  discount: function(person){
+    if(person === 'teacher' || person === 'student'){
+      return this.price -(this.price * 0.25);
+    }else if (person === 'public'){
+      return this.price - (this.price * 0.10);
+    }
+  }
 }
-
-
+  console.log('task 2:', burger.discount('teacher'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -96,11 +102,6 @@ Write a function that creates an object with name, rating, feedback, add the new
 function addReview(array, name, rating, feedback){
   array.push({name, rating, feedback});
   return array;
-  //create an object
-  //const object = {name, rating, review};
-  //push the object to the array
-  
-  /*Your Code Here */
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -115,9 +116,10 @@ Use the getReviewByIndex function below to do the following:
 
 //2 params = array, number
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(array, number) {
   //return the array [number].feedback;
   /*Your code here*/
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
 
 
@@ -134,11 +136,8 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-//array as a param
 function getLastReview(array) {
-  return `"${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}"`
-  /*Your code here*/ 
-  //array[].length
+  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}`
 } 
 
 
